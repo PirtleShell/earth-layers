@@ -11,11 +11,16 @@ th {
 }
 
 #info {
+  visibility: collapse;
   position: fixed;
   bottom: 0;
   background-color: #eee;
-  height: 85px;
+  height: 95px;
   width: 250px;
+}
+
+#earth-layers:hover #info {
+  visibility: visible;
 }
 
 #earth-layers > div:hover {

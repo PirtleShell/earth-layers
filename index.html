@@ -13,9 +13,11 @@
 <body>
   <div id='about-earth-layers'></div>
   <p>The Moon is ~238,000 pixels above this, or about 38 and a half of here to the crust. The Sun is 92,718,000 pixels upwards beyond there, or about 380 lengths of the Moon-Earth Crust's size.</p>
-  <div id='earth-layers'></div>
-  <div id='info'>
-    <h1 id='layer-name'></h1>
+  <div id='earth-layers'>
+    <div id='info'>
+      <h2 id='layer-name'></h2>
+      <p id='layer-thickness'></p>
+    </div>
   </div>
   <script>
     var atmosphere = {
@@ -77,14 +79,14 @@
       return el;
     }
 
-    var nameDisplay = document.getElementById('info');
+    var nameDisplay = document.getElementById('layer-name');
+    var thicknessDisplay = document.getElementById('layer-thickness');
+    var currentDisplay;
     var setDisplayOnHover = event => {
+      nameDisplay.textContent = event.target.id;
       var thickness = event.target.style.height;
-      var message = [
-        event.target.id,
-        `${thickness.substr(0, thickness.length - 2)} miles thick`,
-      ].join(' : ');
-      nameDisplay.textContent = message;
+      thicknessDisplay.textContent =
+        `${thickness.substr(0, thickness.length - 2)} miles thick`;
     };
 
     var earthLayers = document.getElementById('earth-layers');

@@ -23,8 +23,8 @@ Welcome, and enjoy earth at a pixel per mile view of earth and it's layers.
 ### continental crust
 20 to 30 mi
 
-|-----|------------------------------------------------------------|
 |Most Abundant Elements of Earth's Crust | 	Approximate % by weight|
+|-----|------------------------------------------------------------|
 |O | 	46.6|
 |Si | 	27.7|
 |Al | 	8.1|

@@ -2,6 +2,9 @@
 
 <head>
   <title>Earth's Layers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The layers of Earth and it's atmosphere viewed at one mile per pixel.">
   <link rel='stylesheet' href='./style.css' />
   <script src='https://cdn.jsdelivr.net/markdown-it/8.1.0/markdown-it.min.js'></script>
 
@@ -37,7 +40,7 @@
         size: 24,
         color: 'yellow'
       },
-      troposphere {
+      troposphere: {
         size: 7,
         color: 'red'
       }
@@ -54,10 +57,10 @@
     var earthLayers = document.getElementById('about-earth-layers');
     var md = window.markdownit();
     var req = new XMLHttpRequest();
-    req.open('GET', 'earth.md');
+    req.open('GET', 'readme.md');
     req.onload = () => {
       if (req.status === 200) {
-        content.innerHTML = md.render(req.response);
+        earthLayers.innerHTML = md.render(req.response);
       } else {
         Error(req.statusText);
       }

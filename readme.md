@@ -19,7 +19,7 @@ Welcome, and enjoy earth at a pixel per mile view of earth and it's layers.
 
 ### Crust
 |Most Abundant Elements of Earth's Crust | 	Approximate % by weight|
-|-----|------------------------------------------------------------|
+|:---:|:----------------------------------------------------------:|
 |O | 	46.6|
 |Si | 	27.7|
 |Al | 	8.1|
@@ -44,3 +44,5 @@ Welcome, and enjoy earth at a pixel per mile view of earth and it's layers.
 2,270 km (1,420 mi)
 #### inner core
 1,215 km (755 mi)
+
+---

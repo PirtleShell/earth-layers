@@ -3,6 +3,12 @@ body {
   padding: 0;
   margin: 0;
 }
+p {
+  padding: 0 20px;
+}
+th {
+  max-width: 150px;
+}
 #about-earth-layers {
   padding-left: 20px
 }

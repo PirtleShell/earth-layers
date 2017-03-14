@@ -3,6 +3,7 @@
 Welcome, and enjoy earth at a pixel per mile view of earth and it's layers.
 
 ## Atmosphere
+
 ### Exosphere
 700 to 10,000 km (440 to 6,200 miles)
 ### Thermosphere
@@ -14,15 +15,9 @@ Welcome, and enjoy earth at a pixel per mile view of earth and it's layers.
 ### Troposphere
 0 to 12 km (0 to 7 miles)
 
+## Body
 
-## crust
-
-### oceanic crust
-3 to 6 mi
-
-### continental crust
-20 to 30 mi
-
+### Crust
 |Most Abundant Elements of Earth's Crust | 	Approximate % by weight|
 |-----|------------------------------------------------------------|
 |O | 	46.6|
@@ -33,3 +28,19 @@ Welcome, and enjoy earth at a pixel per mile view of earth and it's layers.
 |Na | 	2.8|
 |K | 	2.6|
 |Mg | 	1.5|
+#### oceanic crust
+3 to 6 mi
+#### continental crust
+20 to 30 mi
+
+### Mantle
+#### upper mantle
+665 km (413 mi)
+#### lower mantle
+2,180 km (1,355 mi)
+
+### Core
+#### outer core
+2,270 km (1,420 mi)
+#### inner core
+1,215 km (755 mi)

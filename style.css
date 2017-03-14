@@ -9,30 +9,3 @@ p {
 th {
   max-width: 150px;
 }
-#about-earth-layers {
-  padding-left: 20px
-}
-#Exosphere {
-height: 5760px;
-background-color: #426;
-}
-#Thermosphere {
-height: 390px;
-background-color: blue;
-}
-#Mesosphere {
-height: 20px;
-background-color: green;
-}
-#Stratosphere {
-height: 24px;
-background-color: yellow;
-}
-#Troposphere {
-height: 7px;
-background-color: red;
-}
-#crust {
-  height: 30px;
-  background-color: #430;
-}

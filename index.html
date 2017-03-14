@@ -5,23 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The layers of Earth and it's atmosphere viewed at one mile per pixel.">
-  <link rel='stylesheet' href='./style.css' />
+  <!-- <link rel='stylesheet' href='./style.css' /> -->
   <script src='https://cdn.jsdelivr.net/markdown-it/8.1.0/markdown-it.min.js'></script>
 
 </head>
 
 <body>
   <div id='about-earth-layers'></div>
-  <div id='earth-layers'>
-    <p>The Moon is ~238,000 pixels above this, or about 38 and a half of here to the crust. The Sun is 92,718,000 pixels upwards beyond there, or about 380 lengths of the Moon-Earth Crust's size.</p>
-    <div id='Exosphere'></div>
-    <div id='Thermosphere'></div>
-    <div id='Mesosphere'></div>
-    <div id='Stratosphere'></div>
-    <div id='Troposphere'></div>
-    <!-- CRUST -->
-    <div id='crust'></div>
-  </div>
+  <p>The Moon is ~238,000 pixels above this, or about 38 and a half of here to the crust. The Sun is 92,718,000 pixels upwards beyond there, or about 380 lengths of the Moon-Earth Crust's size.</p>
+  <div id='earth-layers'></div>
   <script>
     var atmosphere = {
       exosphere: {
@@ -34,7 +26,7 @@
       },
       mesosphere: {
         size: 20,
-        color: '#426'
+        color: 'green'
       },
       stratosphere: {
         size: 24,
@@ -51,16 +43,49 @@
         size: 30,
         color: '#430'
       }
+    };
+
+    var buildLayer = function (data) {
+      if (!data.name || !data.color || !data.size) {
+        console.warn('bad element data to buildLayer:', data);
+        return;
+      }
+      var el = document.createElement('div');
+      el.id = data.name;
+      el.style.height = data.size + 'px';
+      el.style['background-color'] = data.color;
+      return el;
     }
 
 
-    var earthLayers = document.getElementById('about-earth-layers');
+    var earthLayers = document.getElementById('earth-layers');
+
+    Object.keys(atmosphere)
+      // attach name to objects
+      .map(name => {
+        atmosphere[name].name = name;
+        return atmosphere[name];
+      })
+      // build each layer
+      .forEach(layerData => {
+        var el = buildLayer(layerData);
+        earthLayers.append(el);
+      });
+
+    var crust = buildLayer({
+      name: 'crust',
+      size: 30,
+      color: '#430'
+    });
+    earthLayers.append(crust);
+
+    var aboutEarthLayers = document.getElementById('about-earth-layers');
     var md = window.markdownit();
     var req = new XMLHttpRequest();
     req.open('GET', 'readme.md');
     req.onload = () => {
       if (req.status === 200) {
-        earthLayers.innerHTML = md.render(req.response);
+        aboutEarthLayers.innerHTML = md.render(req.response);
       } else {
         Error(req.statusText);
       }

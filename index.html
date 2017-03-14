@@ -37,11 +37,26 @@
         color: 'red'
       }
     };
-    var earth = {
-      atmosphere,
+    var insideEarth = {
       crust: {
         size: 30,
         color: '#430'
+      },
+      upperMantle: {
+        size: 413,
+        color: 'lime'
+      },
+      lowerMantle: {
+        size: 1355,
+        color: '#075'
+      },
+      outerCore: {
+        size: 1420,
+        color: 'orange'
+      },
+      innerCore: {
+        size: 755,
+        color: 'darkred'
       }
     };
 
@@ -70,14 +85,19 @@
       .forEach(layerData => {
         var el = buildLayer(layerData);
         earthLayers.append(el);
-      });
-
-    var crust = buildLayer({
-      name: 'crust',
-      size: 30,
-      color: '#430'
     });
-    earthLayers.append(crust);
+
+    Object.keys(insideEarth)
+      // attach name to objects
+      .map(name => {
+        insideEarth[name].name = name;
+        return insideEarth[name];
+      })
+      // build each layer
+      .forEach(layerData => {
+        var el = buildLayer(layerData);
+        earthLayers.append(el);
+    });
 
     var aboutEarthLayers = document.getElementById('about-earth-layers');
     var md = window.markdownit();

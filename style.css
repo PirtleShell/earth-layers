@@ -9,3 +9,15 @@ p {
 th {
   max-width: 150px;
 }
+
+#info {
+  position: fixed;
+  bottom: 0;
+  background-color: #eee;
+  height: 85px;
+  width: 250px;
+}
+
+#earth-layers > div:hover {
+  border: 3px solid rgba(250, 250, 250, 0.5);
+}

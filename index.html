@@ -1,0 +1,69 @@
+<!doctype html>
+
+<head>
+  <title>Earth's Layers</title>
+  <link rel='stylesheet' href='./style.css' />
+  <script src='https://cdn.jsdelivr.net/markdown-it/8.1.0/markdown-it.min.js'></script>
+
+</head>
+
+<body>
+  <div id='about-earth-layers'></div>
+  <div id='earth-layers'>
+    <p>The Moon is ~238,000 pixels above this, or about 38 and a half of here to the crust. The Sun is 92,718,000 pixels upwards beyond there, or about 380 lengths of the Moon-Earth Crust's size.</p>
+    <div id='Exosphere'></div>
+    <div id='Thermosphere'></div>
+    <div id='Mesosphere'></div>
+    <div id='Stratosphere'></div>
+    <div id='Troposphere'></div>
+    <!-- CRUST -->
+    <div id='crust'></div>
+  </div>
+  <script>
+    var atmosphere = {
+      exosphere: {
+        size: 5760,
+        color: '#426'
+      },
+      thermosphere: {
+        size: 390,
+        color: 'blue'
+      },
+      mesosphere: {
+        size: 20,
+        color: '#426'
+      },
+      stratosphere: {
+        size: 24,
+        color: 'yellow'
+      },
+      troposphere {
+        size: 7,
+        color: 'red'
+      }
+    };
+    var earth = {
+      atmosphere,
+      crust: {
+        size: 30,
+        color: '#430'
+      }
+    }
+
+
+    var earthLayers = document.getElementById('about-earth-layers');
+    var md = window.markdownit();
+    var req = new XMLHttpRequest();
+    req.open('GET', 'earth.md');
+    req.onload = () => {
+      if (req.status === 200) {
+        content.innerHTML = md.render(req.response);
+      } else {
+        Error(req.statusText);
+      }
+    };
+    req.send();
+  </script>
+</body>
+
+</html>
